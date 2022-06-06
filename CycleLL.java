@@ -15,6 +15,7 @@ import java.io.*;
     }
 
 */
+//Two Pointers
 
 public class Solution {
     
@@ -30,5 +31,22 @@ public class Solution {
                 return true;
         }
         return false;
+    }
+}
+
+//Uisng HashSet
+
+
+public class Solution {
+    
+    public static boolean detectCycle(Node<Integer> head) {
+        //Your code goes here
+        HashSet<Node<Integer>> hs=new HashSet<>();
+        while(head != null) {
+        if(hs.contains(head)) return true;
+        hs.add(head);
+        head = head.next;
+    }
+    return false;
     }
 }
